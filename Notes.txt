@@ -1,0 +1,7 @@
+﻿What is an enum?
+What is a class?
+What does defining things as public do?
+What is IEnumerable? Used in List.cshtml
+
+For OdeToFood to know what OdeToFood.Core and OdeToFood.Data are, I had to do this:
+Project => AddReference => then check the references you want to add. does it automatically. now we can access things from .Core and .Data
