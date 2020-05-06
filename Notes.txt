@@ -1,7 +1,14 @@
 ﻿What is an enum?
 What is a class?
 What does defining things as public do?
-What is IEnumerable? Used in List.cshtml
+What is IEnumerable? Used in List.cshtml.cs
 
+
+When in a cshtml file, you can use the @ sign to transition into using c#. like if you wanted to do a for loop for example.
 For OdeToFood to know what OdeToFood.Core and OdeToFood.Data are, I had to do this:
 Project => AddReference => then check the references you want to add. does it automatically. now we can access things from .Core and .Data
+
+a form with the method of get is good for doing a search. the info goes into the url
+
+
+key topic: Model Binding
