@@ -6,6 +6,7 @@ namespace OdeToFood.Data
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
+        Restaurant GetById(int id);
     }
     public class InMemoryRestaurantData : IRestaurantData
     {
@@ -20,6 +21,12 @@ namespace OdeToFood.Data
 
 
             };
+        }
+        public Restaurant GetById(int id)
+        {
+            //return a restaurant r if r.Id is equal to the incoming id value
+            //SingleOrDefault means it will return a single match for this id, or it will default to returning a null if there is no match
+            return restaurants.SingleOrDefault(r => r.Id == id);
         }
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
