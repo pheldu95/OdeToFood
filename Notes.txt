@@ -12,3 +12,19 @@ a form with the method of get is good for doing a search. the info goes into the
 
 
 key topic: Model Binding
+    -[BindProperty]. used in gets and posts
+
+asp-for
+    -asp-for allows us to set the value of an input to whatever the restaurants value is. when we are editing
+
+key topic: model state
+    -anything that happens in a Model Bind is recorded in a data structure called ModelState
+
+key topic: data annotations ([Required], [StringLength])
+
+tag helpers
+    - asp-for, asp-validation-for, asp-item
+
+html questions
+    -what is span tag?
+    -what is anchor tag? <a>

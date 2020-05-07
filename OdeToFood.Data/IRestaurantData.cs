@@ -7,6 +7,12 @@ namespace OdeToFood.Data
     {
         IEnumerable<Restaurant> GetRestaurantsByName(string name);
         Restaurant GetById(int id);
+        //method that will let the user update
+        Restaurant Update(Restaurant updatedRestaurant);
+        Restaurant Add(Restaurant newRestaurant);
+        //after you make a change to an entity, need to commit?
+        int Commit();
+
     }
     public class InMemoryRestaurantData : IRestaurantData
     {
@@ -28,6 +34,35 @@ namespace OdeToFood.Data
             //SingleOrDefault means it will return a single match for this id, or it will default to returning a null if there is no match
             return restaurants.SingleOrDefault(r => r.Id == id);
         }
+
+        //public method that will add the new restuarant
+        public Restaurant Add(Restaurant newRestaurant)
+        {
+            restaurants.Add(newRestaurant);
+            newRestaurant.Id = restaurants.Max(r => r.Id) + 1;
+            return newRestaurant;
+        }
+
+
+        public Restaurant Update(Restaurant updatedRestaurant)
+        {
+            //look for a match. will return one match, or if no matches, default to null
+            var restaurant = restaurants.SingleOrDefault(r => r.Id == updatedRestaurant.Id);
+            if(restaurant != null)
+            {
+                //set the restaurants attributes to the updatedRestaurant's
+                restaurant.Name = updatedRestaurant.Name;
+                restaurant.Location = updatedRestaurant.Location;
+                restaurant.Cuisine = updatedRestaurant.Cuisine;
+            }
+            return restaurant;
+        }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
