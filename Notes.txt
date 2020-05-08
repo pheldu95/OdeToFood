@@ -36,5 +36,24 @@ TempData
 For DB
 -right click on odetofood.data and manage nuget packeges. install the following
 -installed Microsoft Entity Framework Core
--entityframeworkcore.sql
+-entityframeworkcore.sqlserver
 -entityframeworkcore.design
+https://www.qhmit.com/sql_server/sql_server_2017/tutorial/sql_server_2017_installation.cfm
+
+the entity framework can create and manage a database for us. once we give it the context
+OdeToFoodDbContext.cs
+
+key topic=Migrations
+-confusing
+-command is: dotnet ef migrations
+-what do these do?
+-describes database schema/schema changes. puts code into OdeToFood/OdeToFood.csproj
+-look in 20200508191151_initialcreate file. in migrations folder of OdeToFood.Data
+    -shows the db schema
+-dotnet ef database update --> you can update a database to a specific migration
+    -dotnet ef database update -s ../OdeTofood/OdeToFood.csproj
+    - this command used the migration to update the database. now there is a database
+    called OdeToFood with a Restaurants table in it
+-later if i want to change the db schema, i can make another migration
+
+our connection string to connect to local db goes into appsettings.json
