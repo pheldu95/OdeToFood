@@ -86,6 +86,10 @@ namespace OdeToFood.Pages.Restaurants
                 restaurantData.Add(Restaurant);
             }
             restaurantData.Commit();
+            //we need to send a confirmation message to the user
+            //we will use TempData. Add an object called Message to tempdata
+            //tempdata is temporary. after the next request, the temp data disappears 
+            TempData["Message"] = "Restaurant Saved!";
             //after save is clicked, the user will be redirected to the detail page
             //the details page needs the restaurant id to get the info for it
             //so we send an anonymous object with the restaurant id in it

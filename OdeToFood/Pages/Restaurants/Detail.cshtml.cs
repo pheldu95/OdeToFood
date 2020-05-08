@@ -13,6 +13,11 @@ namespace OdeToFood.Pages.Restaurants
     {
         private readonly IRestaurantData restaurantData;
 
+        //we are binding tempdata to the Message string
+        //ASP.NET Core will go automatically look for something with key of Message in tempdata
+        [TempData]
+        public string Message { get; set; }
+
         public Restaurant Restaurant { get; set; }
 
         public DetailModel(IRestaurantData restaurantData)

@@ -28,3 +28,13 @@ tag helpers
 html questions
     -what is span tag?
     -what is anchor tag? <a>
+key idea: Post-Redirect-Get pattern
+    -user posts, then redirected to another page where there is a get
+
+TempData
+
+For DB
+-right click on odetofood.data and manage nuget packeges. install the following
+-installed Microsoft Entity Framework Core
+-entityframeworkcore.sql
+-entityframeworkcore.design
