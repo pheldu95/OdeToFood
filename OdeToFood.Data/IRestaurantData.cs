@@ -10,6 +10,7 @@ namespace OdeToFood.Data
         Restaurant Update(Restaurant updatedRestaurant);
         Restaurant Add(Restaurant newRestaurant);
         Restaurant Delete(int id);
+        int GetCountOfRestaurants();
         //after you make a change to an entity, need to commit?
         int Commit();
 

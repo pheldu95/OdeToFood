@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <Folder Include="Pages\Restaurants\" />
+    <Folder Include="ViewComponents\" />
+    <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="Pages\Shared\Components\RestaurantCount\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />

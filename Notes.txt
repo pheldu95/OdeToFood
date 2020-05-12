@@ -67,4 +67,19 @@ _Layout is in charge of organizing the ui for every page
     -you can also have multiple layout pages. for example, you could have a layout page just for the restaurant list view
 
 Partial view - only renders part of your page/view at a time
-    - _Summary file is an example of this. create razor page, but check the partial view box only. 
+    - _Summary file is an example of this. create razor page, but check the partial view box only.
+
+ViewData - a way you can pass information to the _Layout view
+
+ViewComponent - almost like a mini razor page. you can pass it information
+    -a view component doesn't respond to a get or post request. it is kinda like a partial view
+    - it is embedded into another view
+    -a partial view depends on Model information coming from its parent view
+    - whereas a ViewComponent can be completely independent and get its own data
+
+You can do a lot of the functuonality we just did by adding a scaffolding of Razor Pages using ENtity Framework (CRUD)
+
+wwwroot folder - stores libraries like jquery, and bootstrap
+    -also any pictures we want to have in the app, get put in here
+    -stores the css file for the whole site
+    -these libraries get sourced in on the Layout page

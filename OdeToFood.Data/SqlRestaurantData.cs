@@ -42,6 +42,11 @@ namespace OdeToFood.Data
             return db.Restaurants.Find(id);
         }
 
+        public int GetCountOfRestaurants()
+        {
+            return db.Restaurants.Count();
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name)
         {
             //the entity framework translates this into a sql query
