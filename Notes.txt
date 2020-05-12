@@ -57,3 +57,14 @@ key topic=Migrations
 -later if i want to change the db schema, i can make another migration
 
 our connection string to connect to local db goes into appsettings.json
+
+_Layout is in charge of organizing the ui for every page
+    -scripts, css, and html that goes on every page. like a copy right at the bottom of the page
+    - can use @RenderSection to create a section of the page that other pages can put content into
+    - @RenderSection("footer", required: false) --> this section is not required but other pages can use it if wanted
+    - Everything is rendered out in the @RenderBody section, unless you put it in a different section. like the footer for example
+    - but if you put something in a different section, you must tell say so on the cshtml page using @section
+    -you can also have multiple layout pages. for example, you could have a layout page just for the restaurant list view
+
+Partial view - only renders part of your page/view at a time
+    - _Summary file is an example of this. create razor page, but check the partial view box only. 
