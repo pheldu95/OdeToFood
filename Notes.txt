@@ -83,3 +83,6 @@ wwwroot folder - stores libraries like jquery, and bootstrap
     -also any pictures we want to have in the app, get put in here
     -stores the css file for the whole site
     -these libraries get sourced in on the Layout page
+
+enviroment tage helper. <environement include = ""></environment
+    -only incude the html inside this tage if a include or exclude condition is met
