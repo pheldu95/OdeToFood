@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -47,6 +48,10 @@ namespace OdeToFood
                 app.UseHsts();
             }
 
+            //let's try and make our own middleware that says hello world
+            //this middleware only runs if the user sends a /hello request
+            app.Use(SayHelloMiddleware);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseNodeModules();
@@ -60,6 +65,26 @@ namespace OdeToFood
                 endpoints.MapRazorPages();
                 endpoints.MapControllers();
             });
+
+         
+
+        }
+
+        private RequestDelegate SayHelloMiddleware(RequestDelegate next)
+        {
+            return async ctx =>
+            {
+                //this middleware only runs if the user sends a /hello request
+                if (ctx.Request.Path.StartsWithSegments("/hello"))
+                {
+                    await ctx.Response.WriteAsync("Hello, World!");
+
+                }
+                else
+                {
+                    await next(ctx);
+                }
+            };
         }
     }
 }
